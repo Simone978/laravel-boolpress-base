@@ -6,6 +6,7 @@
     <p>{{$post->content}}</p>
     <p>Categoria: {{$post->category}}</p>
     <p>Pubblicato il {{$post->data}}</p>
+    <a href="{{route('posts.edit', $post)}}">Modifica</a>
     <form action="{{route('posts.destroy', $post->id)}}" method="post">
         @csrf
         @method('DELETE')
