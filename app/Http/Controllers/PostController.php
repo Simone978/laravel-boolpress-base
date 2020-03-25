@@ -25,7 +25,7 @@ class PostController extends Controller
      */
     public function create()
     {
-        //
+        return view('create');
     }
 
     /**
@@ -36,7 +36,13 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->all();
+        $post = new Post;
+        $post->fill($data);
+        $saved = $post->save();
+        if($saved){
+            return redirect()->route('posts.show', $post);
+        }
     }
 
     /**
@@ -45,9 +51,10 @@ class PostController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Post $post)
     {
-        //
+
+        return view('show', compact('post'));
     }
 
     /**
@@ -56,9 +63,9 @@ class PostController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
-    {
-        //
+    public function edit(Post $post)
+    { 
+        return view('edit', compact('post'));
     }
 
     /**
