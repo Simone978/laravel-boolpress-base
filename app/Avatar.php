@@ -10,6 +10,7 @@ class Avatar extends Model
         'user_id',
         'img'
     ];
+    public $timestamps = false;
 
     public function user()
     {

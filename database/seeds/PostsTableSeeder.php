@@ -14,7 +14,7 @@ class PostsTableSeeder extends Seeder
     {
         for ($i=0; $i < 10; $i++) { 
             $newpost = new Post;
-            $newpost->img = $faker->imageUrl($width = 640, $height = 480);
+            $newpost->imageUrl = $faker->imageUrl($width = 640, $height = 480);
             $newpost->title = $faker->sentence($nbWords = 5, $asText = false);
             $newpost->content = $faker->paragraph($nbSentences = 3, $variableNbSentences = true);
             $newpost->category = $faker->word;

@@ -20,3 +20,4 @@ Route::resource('posts', 'PostController');
 //Route::resource('users', 'UserController');
 Route::get('home', 'UserController@index');
 Route::resource('photos', 'PhotoController');
+Route::resource('avatar', 'AvatarController');
