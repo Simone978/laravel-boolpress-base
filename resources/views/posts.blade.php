@@ -2,6 +2,7 @@
 
 @section('main')
     @foreach ($posts as $post)
+    <img src="{{$post->imageUrl}}" alt="">
     <h2>{{$post->title}}</h2>
     <p>{{$post->content}}</p>
     <p>Categoria: {{$post->category}}</p>
