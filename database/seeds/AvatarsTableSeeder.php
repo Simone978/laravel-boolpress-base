@@ -16,7 +16,7 @@ class AvatarsTableSeeder extends Seeder
         for ($i=1; $i <=10 ; $i++) { 
             $newAvatar = new Avatar;
             $newAvatar -> user_id = $i;
-            $newAvatar -> img = 'https://i.pravatar.cc/300';
+            $newAvatar -> img = "https://i.pravatar.cc/150?img=".rand(1,100)."";
             $newAvatar -> save();
         }
     }
